@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Digital.FeatureFiles
+namespace Digital.H.Notes.Selenium.CodeExamples
 {
     using TechTalk.SpecFlow;
     
@@ -48,7 +48,7 @@ namespace Digital.FeatureFiles
             if (((testRunner.FeatureContext != null) 
                         && (testRunner.FeatureContext.FeatureInfo.Title != "LO_OneOffPayment")))
             {
-                Digital.FeatureFiles.LO_OneOffPaymentFeature.FeatureSetup(null);
+                Digital.H.Notes.Selenium.CodeExamples.LO_OneOffPaymentFeature.FeatureSetup(null);
             }
         }
         
@@ -68,26 +68,266 @@ namespace Digital.FeatureFiles
             testRunner.CollectScenarioErrors();
         }
         
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Add two numbers")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LO_OneOffPayment")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        public virtual void AddTwoNumbers()
+        public virtual void LoggedOutOneOffPayment_VerifyOne_OffPaymentsAcceptPennyAmounts(string refNo, string dOB, string postcode, string paymentAmount, string cardNumber, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", new string[] {
-                        "mytag"});
+            string[] @__tags = new string[] {
+                    "mytag"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logged Out One offPayment - Verify one-off payments accept penny amounts", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have entered 50 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have opened Digital in Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("I have entered 70 into the calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I click on the Payment Options bubble icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.When("I press add", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I select Payment Options radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.Then("the result should be 120 on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And(string.Format("I complete Anonymous Login using \'{0}\', \'{1}\' and \'{2}\' through data from feature" +
+                        " file", refNo, dOB, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
+ testRunner.And("I select Make a one off payment radio button and click on Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And(string.Format("I complete the Logged Off One Off payment Step1 screen using \'{0}\' through data f" +
+                        "rom feature file and click on Continue", paymentAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.Then(string.Format("the Logged Off One Off payment Step2 -Review screen displays the payment amount \'" +
+                        "{0}\'", paymentAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+ testRunner.And(string.Format("I click on Continue and Complete the Verifone Payment page with valid data using " +
+                        "\'{0}\' through data from feature file and click Continue", cardNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.And("I click on the Finish button in the Logged out Payment confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.Then("PaymentOptionsPage1 screen is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
+ testRunner.And("User is navigated to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Logged Out One offPayment - Verify one-off payments accept penny amounts: 1000203" +
+            "95")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LO_OneOffPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RefNo", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DOB", "13/04/1954")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Postcode", "OX14 1QN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PaymentAmount", "1.21")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CardNumber", "4012001038443335")]
+        public virtual void LoggedOutOneOffPayment_VerifyOne_OffPaymentsAcceptPennyAmounts_100020395()
+        {
+            this.LoggedOutOneOffPayment_VerifyOne_OffPaymentsAcceptPennyAmounts("100020395", "13/04/1954", "OX14 1QN", "1.21", "4012001038443335", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void LoggedOutOneOffPayment_VerifyBackButtonWorksInReviewPage(string refNo, string dOB, string postcode, string paymentAmount, string cardNumber, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logged Out One offPayment - Verify back button works in Review page", exampleTags);
+#line 23
+this.ScenarioSetup(scenarioInfo);
+#line 24
+ testRunner.Given("I have opened Digital in Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+ testRunner.When("I click on the Payment Options bubble icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+ testRunner.And("I select Payment Options radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+ testRunner.And(string.Format("I complete Anonymous Login using \'{0}\', \'{1}\' and \'{2}\' through data from feature" +
+                        " file", refNo, dOB, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+ testRunner.And("I select Make a one off payment radio button and click on Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+ testRunner.And(string.Format("I complete the Logged Off One Off payment Step1 screen using \'{0}\' through data f" +
+                        "rom feature file and click on Continue", paymentAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 30
+ testRunner.Then(string.Format("the Logged Off One Off payment Step2 -Review screen displays the payment amount \'" +
+                        "{0}\'", paymentAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 31
+ testRunner.And("I click on the Back button in the the Logged Off One Off payment Step2 -Review sc" +
+                    "reen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+ testRunner.Then("the Logged Off One Off payment Step2 screen is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 33
+ testRunner.And("User is navigated to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Logged Out One offPayment - Verify back button works in Review page: 100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LO_OneOffPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RefNo", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DOB", "13/04/1954")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Postcode", "OX14 1QN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PaymentAmount", "1.21")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CardNumber", "4012001038443335")]
+        public virtual void LoggedOutOneOffPayment_VerifyBackButtonWorksInReviewPage_100020395()
+        {
+            this.LoggedOutOneOffPayment_VerifyBackButtonWorksInReviewPage("100020395", "13/04/1954", "OX14 1QN", "1.21", "4012001038443335", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void LoggedOutOneOffPayment_VerifyUserRedirectedToTermsAndConditonsPage(string refNo, string dOB, string postcode, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logged Out One offPayment - Verify user redirected to Terms and Conditons page", exampleTags);
+#line 38
+this.ScenarioSetup(scenarioInfo);
+#line 39
+ testRunner.Given("I have opened Digital in Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 40
+ testRunner.When("I click on the Payment Options bubble icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 41
+ testRunner.And("I select Payment Options radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.And(string.Format("I complete Anonymous Login using \'{0}\', \'{1}\' and \'{2}\' through data from feature" +
+                        " file", refNo, dOB, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+ testRunner.And("I select Make a one off payment radio button and click on Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+ testRunner.And("I click on the Terms and Conditions link in the Logged Off One Off payment Step1 " +
+                    "screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+ testRunner.Then("the user is redirected to the Terms and Conditions page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 46
+ testRunner.And("User is navigated to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Logged Out One offPayment - Verify user redirected to Terms and Conditons page: 1" +
+            "00020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LO_OneOffPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RefNo", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DOB", "13/04/1954")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Postcode", "OX14 1QN")]
+        public virtual void LoggedOutOneOffPayment_VerifyUserRedirectedToTermsAndConditonsPage_100020395()
+        {
+            this.LoggedOutOneOffPayment_VerifyUserRedirectedToTermsAndConditonsPage("100020395", "13/04/1954", "OX14 1QN", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void LoggedOutOneOffPayment_VerifyDiscountAmount(string refNo, string dOB, string postcode, string paymentAmount, string cardNumber, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logged Out One offPayment - Verify discount amount", exampleTags);
+#line 52
+this.ScenarioSetup(scenarioInfo);
+#line 53
+ testRunner.Given("I have opened Digital in Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 54
+ testRunner.When("I click on the Payment Options bubble icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 55
+ testRunner.And("I select Payment Options radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+ testRunner.And(string.Format("I complete Anonymous Login using \'{0}\', \'{1}\' and \'{2}\' through data from feature" +
+                        " file", refNo, dOB, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+ testRunner.And("I note the value of the discount amount in green bar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+ testRunner.And("I select Make a one off payment radio button and click on Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 59
+ testRunner.And(string.Format("I complete the Logged Off One Off payment Step1 screen using \'{0}\' through data f" +
+                        "rom feature file and click on Continue", paymentAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 60
+ testRunner.Then(string.Format("the Logged Off One Off payment Step2 -Review screen displays the payment amount \'" +
+                        "{0}\'", paymentAmount), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 61
+ testRunner.And(string.Format("I click on Continue and Complete the Verifone Payment page with valid data using " +
+                        "\'{0}\' through data from feature file and click Continue", cardNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+ testRunner.And("I click on the Finish button in the Logged out Payment confirmation page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+ testRunner.Then("PaymentOptionsPage1 screen is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 64
+ testRunner.And("User is navigated to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 65
+ testRunner.When("I click on the Payment Options bubble icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 66
+ testRunner.And("I select Payment Options radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 67
+ testRunner.And(string.Format("I complete Anonymous Login using \'{0}\', \'{1}\' and \'{2}\' through data from feature" +
+                        " file", refNo, dOB, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 68
+ testRunner.Then("I verify that the discount amount in green bar has not changed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 69
+ testRunner.And("User is navigated to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Logged Out One offPayment - Verify discount amount: 100038447")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LO_OneOffPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "100038447")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RefNo", "100038447")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DOB", "07/01/1944")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Postcode", "SP11 0LJ")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:PaymentAmount", "1")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:CardNumber", "4012001038443335")]
+        public virtual void LoggedOutOneOffPayment_VerifyDiscountAmount_100038447()
+        {
+            this.LoggedOutOneOffPayment_VerifyDiscountAmount("100038447", "07/01/1944", "SP11 0LJ", "1", "4012001038443335", ((string[])(null)));
+#line hidden
+        }
+        
+        public virtual void LoggedOutOneOffPayment_NavigateFromDDPage_VerifyBalanceNotPre_Populated(string refNo, string dOB, string postcode, string dDAmount, string frequency, string accountHolder, string accountNo, string sortCode, string emailAddress, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Logged Out One offPayment - Navigate from DD page. Verify Balance not pre-populat" +
+                    "ed", exampleTags);
+#line 76
+this.ScenarioSetup(scenarioInfo);
+#line 77
+ testRunner.Given("I have opened Digital in Chrome", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 78
+ testRunner.When("I click on the Payment Options bubble icon", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 79
+ testRunner.And("I select Payment Options radio button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 80
+ testRunner.And(string.Format("I complete Anonymous Login using \'{0}\', \'{1}\' and \'{2}\' through data from feature" +
+                        " file", refNo, dOB, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 81
+ testRunner.And("I select Setup a Direct Debit radio button and click on Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+ testRunner.And(string.Format("I complete the Logged Off Direct Debit Plan Step1 screen using \'{0}\',  \'{1}\', \'{2" +
+                        "}\', \'{3}\', \'{4}\' and \'<EmailAddres>\'  through data from feature file", dDAmount, frequency, accountHolder, accountNo, sortCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+ testRunner.And("I click on the Back button in the Direct Debit Plan Step1 screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+ testRunner.And("I select Make a one off payment radio button and click on Continue", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+ testRunner.Then("I verify that the Payment Amount field is NOT pre-populated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 86
+ testRunner.And("User is navigated to home page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Logged Out One offPayment - Navigate from DD page. Verify Balance not pre-populat" +
+            "ed: 100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "LO_OneOffPayment")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:RefNo", "100020395")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DOB", "13/04/1954")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Postcode", "OX14 1QN")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:DDAmount", "5.00")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Frequency", "Monthly")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountHolder", "A Test")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:AccountNo", "14457846")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:SortCode", "308088")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:EmailAddress", "autoTestLO@test.com")]
+        public virtual void LoggedOutOneOffPayment_NavigateFromDDPage_VerifyBalanceNotPre_Populated_100020395()
+        {
+            this.LoggedOutOneOffPayment_NavigateFromDDPage_VerifyBalanceNotPre_Populated("100020395", "13/04/1954", "OX14 1QN", "5.00", "Monthly", "A Test", "14457846", "308088", "autoTestLO@test.com", ((string[])(null)));
+#line hidden
         }
     }
 }
